@@ -1,0 +1,45 @@
+﻿npm init - termnal vsc (лежит по D:\!nodejs\kinopoisk)
+npm i nodemon ejs express mongoose - termnal vsc
+npm start
+https://www.onlinewebfonts.com/download/a1750a4dae8db954fdd595f313b3b34e
+https://github.com/ivannikovmn/20230503a-Decode-kinopoisk
+
+postman
+get http://localhost:8000/api/genre send
+
+termnal vsc
+mongosh
+show dbs
+use kinopoisk
+show collections
+db.categories.find()
+db.films.deleteOne({titleEng:'test'})
+db.countries.drop()
+
+
+https://www.makeuseof.com/nodejs-bcrypt-hash-verify-salt-password/
+
+termnal vsc(bash):
+npm i bcrypt
+-
+mongosh
+show dbs
+use kinopoisk
+show collections
+db.users.find()
+db.films.find()
+npm i express-session
+npm i connect-mongo
+npm i passport
+npm i passport-local
+
+npmjs.com/package/bcrypt?actibeTab=readme
+
+npm i multer
+npm i fs path
+
+https://cdnjs.com/libraries/axios
+
+
+Git Bash (Js 13.4)
+git init
