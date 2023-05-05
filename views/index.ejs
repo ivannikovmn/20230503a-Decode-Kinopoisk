@@ -43,10 +43,25 @@
                             <div class="film-rate">
                                 <p>7.3</p>
                             </div>
-                            <button class="film-btn" onclick="saveToWatch('<%=item._id%>')">
-                                <img src="/images/icons/save.svg" alt="">
-                                Буду смотреть
-                            </button>
+                            <%
+                                if(user.toWatch && user.toWatch.includes(item._id)){
+
+                            %>
+                                <button class="film-btn" onclick="saveToWatch('<%=item._id%>')">
+                                    <img src="/images/icons/save.svg" alt="">
+                                    Сохраненно
+                                </button>                            
+                            <%
+                                }else{
+                            %>
+                            <!-- <button class="film-btn" onclick="saveToWatch('<%=item._id%>')"> -->
+                                <button class="film-btn" onclick="saveToWatch('<%=item._id%>')">
+                                    <img src="/images/icons/save.svg" alt="">
+                                    Буду смотреть
+                                </button>
+                            <%
+                                }
+                            %>
                         </div>
                     </div>
                 <%
@@ -55,6 +70,7 @@
             </div>
         </div>
     </div>
-    <script src="/js/saveFilm.js"></script>
+    <%- include('partials/scripts.ejs')%>
+    <!-- <script src="/js/saveFilm"></script> -->
 </body>
 </html>

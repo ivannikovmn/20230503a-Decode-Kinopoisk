@@ -23,9 +23,15 @@ router.get('/', async(req , res) => {
     // const films = await Film.find()
     const films = await Film.find().populate('genre').populate('country')
     // const films = await Film.find().populate('country' , 'name').populate('genre')
-    console.log(films);
+    // console.log(films);
     // console.log(allGenres);
-    res.render("index" , {genres: allGenres , user: req.user ?  req.user: {} , films})
+    const user = req.user ? await User.findById(req.user._id)
+    // .populate('toWatch')
+    // .populate({path: 'toWatch' , populate: {path: 'country'}})
+    // .populate({path: 'toWatch' , populate: {path: 'genre'}}) 
+    : {} 
+    // res.render("index" , {genres: allGenres , user: req.user ?  req.user: {} , films})
+    res.render("index" , {genres: allGenres , user, films})
 })
 
 router.get('/login', (req, res) => {
@@ -38,7 +44,10 @@ router.get('/register', (req, res) => {
 
 router.get('/profile/:id', async(req, res) => {
     const allGenres = await Genres.find()
-    const user = await User.findById(req.params.id)
+    // const user = await User.findById(req.params.id)
+    const user = await User.findById(req.params.id).populate('toWatch')
+    .populate({path: 'toWatch' , populate: {path: 'country'}})
+    .populate({path: 'toWatch' , populate: {path: 'genre'}})
     // console.log(user);
     // console.log(req.user , '==profile');
     // res.render("profile" , {user: req.user ?  req.user: {} , genres: allGenres})

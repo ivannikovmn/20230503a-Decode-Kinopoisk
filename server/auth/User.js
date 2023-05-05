@@ -8,6 +8,8 @@ const UserSchema = new mongoose.Schema({
     isAdmin: Boolean,
     toWatch: [{type: Schema.Types.ObjectId , ref: 'film'}],
     watched: [{type: Schema.Types.ObjectId , ref: 'film'}]
+    // toWatch: [{type: Schema.Types.ObjectId , ref: 'film'}],
+    // watched: [{type: Schema.Types.ObjectId , ref: 'film'}]
 })
 
 module.exports = mongoose.model('user' , UserSchema)
