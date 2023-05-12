@@ -102,9 +102,28 @@ const saveFilm = async(req , res) => {
     }
     // res.send('ok')
 }
+
+const deleteFromToWatch = async(req , res) => {
+    if(req.user && req.params.id){
+        const user = await User.findById(req.user.id)
+        // console.log(user);
+        // console.log('work');
+        // res.send('ok')
+        for(let i = 0; i < user.toWatch.length; i++){
+            if(user.toWatch[i] == req.params.id){
+                user.toWatch.splice(i , 1)
+                user.save()
+                res.send('Успешно удалено')
+            }
+        }
+        // res.send('Данные не найдены')
+    }
+}
+
 module.exports = {
     createFilm,
     editFilm,
     deleteFilm,
-    saveFilm
+    saveFilm,
+    deleteFromToWatch
 }

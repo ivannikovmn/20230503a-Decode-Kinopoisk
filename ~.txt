@@ -49,6 +49,8 @@ git commit -m "initial"
 git remote add origin https://github.com/ivannikovmn/20230503a-Decode-kinopoisk
 	p.s git branch --move master main - переименовать master в main в visual code 
 git push origin main
-
-
-add project 11 (I'll watch)
+---
+git status
+git add .
+git commit -m "add project 11 (I'll watch)"
+git push origin main
