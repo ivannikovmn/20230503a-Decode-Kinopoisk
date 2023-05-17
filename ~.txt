@@ -13,6 +13,7 @@ show dbs
 use kinopoisk
 show collections
 db.categories.find()
+db.genres.find()
 db.films.deleteOne({titleEng:'test'})
 db.countries.drop()
 
@@ -66,4 +67,8 @@ git push origin main
 ---
 git add .
 git commit -m "add project 13 part 1 (detail and fix middlewares)"
+git push origin main
+---
+git add .
+git commit -m "add project 13 part 2 (navigation - category)"
 git push origin main

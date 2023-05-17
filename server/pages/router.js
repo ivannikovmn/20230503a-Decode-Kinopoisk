@@ -27,13 +27,20 @@ router.get('/', async(req , res) => {
         // options.category = req.query.categ
         options.genre = genres._id
     }
-    console.log(options);
+    let page = 0
+    const limit = 3
+    if(req.query.page && req.query.page > 0){
+        page = req.query.page
+    }
+    const totalFilms = await Film.count()
+    console.log(totalFilms);
+    // console.log(options);
     // console.log(req.query);
     const allGenres = await Genres.find()
     // console.log(await Country.find());
     // const films = await Film.find()
     // const films = await Film.find(options).populate('genre').populate('country')
-    const films = await Film.find(options).populate('genre').populate('country')
+    const films = await Film.find(options).limit(limit).skip(page * limit).populate('genre').populate('country')
     // const films = await Film.find().populate('country' , 'name').populate('genre')
     // console.log(films);
     // console.log(allGenres);
@@ -43,7 +50,8 @@ router.get('/', async(req , res) => {
     // .populate({path: 'toWatch' , populate: {path: 'genre'}}) 
     : {} 
     // res.render("index" , {genres: allGenres , user: req.user ?  req.user: {} , films})
-    res.render("index" , {genres: allGenres , user, films})
+    // 4 / 3 = 1(1) => 2
+    res.render("index" , {genres: allGenres , user, films , pages: Math.ceil(totalFilms / limit)})
 })
 
 router.get('/login', (req, res) => {
