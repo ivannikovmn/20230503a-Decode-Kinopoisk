@@ -59,5 +59,7 @@ git status
 git add .
 git commit -m "add project 12 part 1 (I'll watch)"
 git push origin main
---
-"add detail"
+---
+git add .
+git commit -m "add project 12 part 2 (detail)"
+git push origin main
