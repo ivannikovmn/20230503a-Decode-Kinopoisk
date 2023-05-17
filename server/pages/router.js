@@ -18,10 +18,22 @@ const Film = require('../Films/Film')
 // }
 
 router.get('/', async(req , res) => {
+    const options = {}
+    // const genres = await Genres.find({key : req.query.categ})
+    const genres = await Genres.findOne({key : req.query.genre})
+    console.log(genres);
+    // if(req.query.categ){        
+    if(genres){
+        // options.category = req.query.categ
+        options.genre = genres._id
+    }
+    console.log(options);
+    // console.log(req.query);
     const allGenres = await Genres.find()
     // console.log(await Country.find());
     // const films = await Film.find()
-    const films = await Film.find().populate('genre').populate('country')
+    // const films = await Film.find(options).populate('genre').populate('country')
+    const films = await Film.find(options).populate('genre').populate('country')
     // const films = await Film.find().populate('country' , 'name').populate('genre')
     // console.log(films);
     // console.log(allGenres);

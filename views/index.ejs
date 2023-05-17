@@ -13,7 +13,8 @@
             <div class="categories">
                 <h3>Жанры</h3>
                 <% genres.forEach(genre => {%>    
-                    <a href="/<%=genre.key%>"><%=genre.name%></a>
+                    <!-- <a href="?categ=<%=genre.key%>"><%=genre.name%></a> -->
+                    <a href="?genre=<%=genre.key%>"><%=genre.name%></a>
                 <% }) %>
                 <!-- <a href="">Драма</a> 
                 <a href="">Комедия</a>
