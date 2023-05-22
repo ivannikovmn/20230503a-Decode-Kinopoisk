@@ -69,10 +69,15 @@
                     })
                 %>
                 <div class="pages">
+                <!-- <a href=""><%=locals.genre%></a> -->
                     <%
+                            let localsString = ''
+                            if(locals.genre){
+                                localsString = `genre=${locals.genre}&`
+                            }
                             for(let i = 0; i < pages; i++){
                     %>
-                            <a href="?page=<%=i%>"><%=i + 1%></a>
+                            <a href="?<%=localsString%>page=<%=i%>"><%=i + 1%></a>
                     <%
                             }
                     %>

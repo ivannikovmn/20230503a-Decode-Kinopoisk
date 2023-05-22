@@ -33,7 +33,7 @@ const createFilm = async (req , res) =>  {
 }
 
 const editFilm = async (req , res) => {
-    console.log(req.params);
+    // console.log(req.params);
     if(req.file && req.body.titleRus.length > 2 &&
         req.body.titleEng.length > 2 &&
         req.body.year > 0 &&

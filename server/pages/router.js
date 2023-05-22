@@ -21,11 +21,12 @@ router.get('/', async(req , res) => {
     const options = {}
     // const genres = await Genres.find({key : req.query.categ})
     const genres = await Genres.findOne({key : req.query.genre})
-    console.log(genres);
+    // console.log(genres);
     // if(req.query.categ){        
     if(genres){
         // options.category = req.query.categ
         options.genre = genres._id
+        res.locals.genre = req.query.genre
     }
     let page = 0
     const limit = 3
@@ -33,7 +34,7 @@ router.get('/', async(req , res) => {
         page = req.query.page
     }
     const totalFilms = await Film.count()
-    console.log(totalFilms);
+    // console.log(totalFilms);
     // console.log(options);
     // console.log(req.query);
     const allGenres = await Genres.find()
