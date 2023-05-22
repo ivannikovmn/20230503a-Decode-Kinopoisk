@@ -44,7 +44,7 @@ router.get('/', async(req , res) => {
         ]
         res.locals.search = req.query.search
     }
-    const totalFilms = await Film.count()
+    const totalFilms = await Film.count(options)
     // console.log(totalFilms);
     // console.log(options);
     // console.log(req.query);
