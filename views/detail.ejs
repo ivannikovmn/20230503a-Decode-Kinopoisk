@@ -15,7 +15,7 @@
                     <h2><%=film.titleRus%> (<%=film.year%>)</h2>
                     <p><%=film.titleEng%></p>
                     <%
-                        if(user.toWatch.includes(film._id)){
+                        if(user && user.toWatch && user.toWatch.includes(film._id)){
                     %>
                         <button class="film-btn" onclick="deleteFromToWatch('<%=film._id%>')">
                             <img src="/images/icons/saved.png" alt="">
@@ -59,6 +59,33 @@
             <%
                 }
             %>
+            <div class="comments">
+                <h3>Коментарий</h3>
+                <% if(user && user._id){%>
+                    <form action="" class="add-comment-form">
+                        <p>Оцените фильм</p>
+                        <div class="comment-starts">
+                            <img src="/images/icons/star.svg" alt="">
+                            <img src="/images/icons/star.svg" alt="">
+                            <img src="/images/icons/star.svg" alt="">
+                            <img src="/images/icons/star.svg" alt="">
+                            <img src="/images/icons/star.svg" alt="">
+                        </div>
+                        <p>Напишите коментарий</p>
+                        <textarea name="text"></textarea>
+                        <button>Сохранить</button>
+                    </form>
+                <%}else{%>
+                    <p>
+                        <a href="/login">Войдите</a>
+                        или 
+                        <a href="/register">зарегиcтрируйтесь</a>,
+                        чтобы оставить коментарий
+                    </p>
+                <%
+                    }   
+                %>
+            </div>
         </div>
 
     </div>

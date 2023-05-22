@@ -81,4 +81,10 @@ git add .
 git commit -m "add project 14 part 1 (pagination)"
 git push origin main
 ---
-git commit -m "add project 14 part 2 (search)"
+git add .
+git commit -m "add project 14 part 2 (search + pagination)"
+git push origin main
+---
+git add .
+git commit -m "add project 14 part 3 (comment)"
+git push origin main
