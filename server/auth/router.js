@@ -11,6 +11,13 @@ router.post('/api/signup' , signUp)
 // })
 router.post('/api/signin' , passport.authenticate('local' , {failureRedirect : '/login?error=1'}) , signIn)
 router.get('/api/signout' , signOut)
+// router.get('/api/auth/google' , passport.authenticate('google') , (req , res) => {
+//     console.log('work');
+// })
+// router.get('/api/auth/google' , passport.authenticate('google'))
+router.get('/api/auth/google' , passport.authenticate('google') , (req , res) => {
+    res.redirect('/profile/' + req.user._id)
+})
 createAdmin()
 
 module.exports = router

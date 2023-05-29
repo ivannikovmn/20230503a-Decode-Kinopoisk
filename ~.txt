@@ -3,6 +3,8 @@ npm i nodemon ejs express mongoose - termnal vsc
 npm start
 https://www.onlinewebfonts.com/download/a1750a4dae8db954fdd595f313b3b34e
 https://github.com/ivannikovmn/20230503a-Decode-kinopoisk
+https://console.cloud.google.com/cloud-resource-manager
+https://www.passportjs.org/packages/passport-google-oauth20/
 
 postman
 get http://localhost:8000/api/genre send
@@ -15,6 +17,7 @@ show collections
 db.categories.find()
 db.genres.find()
 db.users.find()
+db.rates.find()
 db.films.deleteOne({titleEng:'test'})
 db.countries.drop()
 
@@ -42,10 +45,12 @@ npm i fs path
 
 https://cdnjs.com/libraries/axios
 
+npm install passport-google-oauth20
+
 
 termnal vsc(bash) (Git Bash c Javascript 13.4 + про .gitignore ru.stackoverflow.com)
 git init 
-	.gitignore node_modules как в https://ru.stackoverflow.com/questions/564972/ (не сработало)
+	.gitignore node_modules как в https://ru.stackoverflow.com/questions/564972/ 
 git add .
 git commit -m "initial"
 git remote add origin https://github.com/ivannikovmn/20230503a-Decode-kinopoisk
@@ -94,4 +99,10 @@ git add .
 git commit -m "fix project 14 part 1 (pagination)"
 git push origin main
 ---
-git commit -m "add project 15 part 1 and part 2 (rates, comment)"
+git add .
+git commit -m "add project 15 (rates, comment)"
+git push origin main
+---
+git add .
+git commit -m "add project 16 (passport google oauth)"
+git push origin main
