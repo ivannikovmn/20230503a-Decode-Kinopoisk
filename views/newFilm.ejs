@@ -9,7 +9,7 @@
         <div class="main">
             <form action="/api/films/new" method="POST" class="form" enctype="multipart/form-data">
                 <h3>Новый фильм</h3>
-                <fieldset class="fieldset">
+                <fieldset class="fieldset"> 
                     <label for="">Добавьте картинку фильма</label>
                     <input type="file" name="image">
                 </fieldset>
@@ -29,10 +29,6 @@
                     <label for="">Длительность</label>
                     <input type="text" placeholder="Введите длительность фильма" name="time">
                 </fieldset>
-                <fieldset class="fieldset">
-                    <label for="">Ссылка на фильм</label>
-                    <input type="text" placeholder="Введите ссылку на фильм" name="video">
-                </fieldset>                
                 <fieldset class="fieldset">
                     <label for="">Страна выпуска</label>
                     <select name="country" id="">
@@ -61,6 +57,18 @@
                         <option value="">Комедия</option> -->
                     </select>                     
                 </fieldset>
+                <a class="addSeriesBtn" id="addSeriesBtn" onclick="addSeries()">Добавить серии</a>
+                <a class="addSeriesBtn" id="addFilmUrlBtn" onclick="addFilmUrl()">Добавить ссылку на фильм</a>
+                <div id="urls"></div>
+                <!-- <div class="series">
+                    <p>1 серия</p>
+                    <input type="text" placeholder="Введите ссылку на видео">
+                </div> -->
+                <!-- <fieldset class="fieldset">
+                    <label for="">Ссылка на фильм</label>
+                    <input type="text" placeholder="Введите ссылку на фильм" name="video">
+                </fieldset> -->
+
                 <fieldset class="fieldset">
                     <button type="submit">Добавить</button>
                 </fieldset>

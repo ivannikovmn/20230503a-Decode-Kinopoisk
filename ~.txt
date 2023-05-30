@@ -19,6 +19,7 @@ db.genres.find()
 db.users.find()
 db.rates.find()
 db.films.deleteOne({titleEng:'test'})
+db.films.find()
 db.countries.drop()
 
 
@@ -106,3 +107,6 @@ git push origin main
 git add .
 git commit -m "add project 16 (passport google oauth)"
 git push origin main
+---
+git add .
+git commit -m "add project 17(serial, series)"
