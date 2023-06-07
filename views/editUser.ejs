@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs')%>
+    <div class="container">
+        <div class="main">
+            <form action="/api/users/edit" method="POST" class="form">
+                <h2>Редактировать пользователя</h2>
+                <fieldset>
+                    <input type="hidden" value="<%=user._id%>" name="id">
+                </fieldset>                
+                <fieldset class="fieldset">
+                    
+                    <textarea placeholder="Введите имя" name="full_name"><%=user.full_name%></textarea>                 
+                </fieldset>    
+                <fieldset  class="fieldset">
+                    <button class="blue-button" type="submit">Сохранить</button>
+                </fieldset>                
+            </form>
+        </div>
+    </div>
+    <%- include('partials/scripts.ejs')%>
+</body>
+</html>

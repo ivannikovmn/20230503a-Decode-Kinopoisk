@@ -13,8 +13,12 @@
 .film-btns a:first-child{
     background-color: yellow;
 }
-.film-btns a:last-child{
+.film-btns a:nth-child(2){
     background-color: red;
+    color: #fff;
+}
+.film-btns a:last-child{
+    background-color: gray;
     color: #fff;
 }
 .add-btn{

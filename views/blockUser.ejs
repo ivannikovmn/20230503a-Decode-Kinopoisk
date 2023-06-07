@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header.ejs')%>
+    <div class="container">
+        <div class="main">
+            <form action="/api/users/block" method="POST" class="form">
+                <h2>Блокировать пользователя</h2>
+                <fieldset>
+                    <input type="hidden" value="<%=user._id%>" name="id">
+                </fieldset>                
+                <fieldset class="fieldset">
+                    
+                    <textarea placeholder="Введите имя" name="full_name" id="textarea"><%=user.full_name%></textarea>                 
+                </fieldset>    
+                <fieldset  class="fieldset">
+                    <!-- <a href="" onclick="blockUsers()">Тест</a> -->
+                    <!-- <a href="" onclick="unblockUsers()">Тест</a> -->
+                    <script>
+                        function blockUsers(){
+                            // console.log('work');
+                            document.getElementById('textarea').value += "<заблокирован>";
+                        }      
+                        function unblockUsers(){
+                            function clean(txt){
+                                return out = txt.replace(/(<([^>]+)>)/ig,''); 
+                            }
+                        document.querySelector('textarea').value = clean(document.querySelector('textarea').value)
+                        }                                                                                       
+                    </script>                    
+                    <button class="blue-button" type="submit" onclick="blockUsers()">Да</button> <br>
+                    <button class="blue-button" type="submit"  onclick="unblockUsers()">Нет</button>
+                </fieldset>                
+            </form>
+        </div>
+    </div>
+    <%- include('partials/scripts.ejs')%>
+</body>
+</html>

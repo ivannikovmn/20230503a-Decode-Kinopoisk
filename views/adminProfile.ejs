@@ -36,31 +36,34 @@
                     </div>
                 </div>
                 <!-- <div class="admin-btn"></div> -->
-                <h3>Пользователи</h3>
+                <br><br><br><h3>Пользователи</h3>
                 <%
-                    films.forEach(item =>{
+                    users.forEach(item =>{
                 %>
                     <div class="main-card">
                         <div class="card-left">
                             <div class="film-info">
-                                <%=item.titleRus%>
+                                <%=item.full_name%>
                             </div>
                         </div>
                         <div class="card-right">
                             <div class="film-btns">
-                                <a href="/edit/<%=item._id%>">
+                                <a href="/edit_user/<%=item._id%>">
                                     Редактировать
                                 </a>
-                                <a onclick="deleteFilms('<%=item._id%>' , '<%=item.author._id%>')">
+                                <a onclick="deleteUsers('<%=item.id%>' )">
                                     Удалить
                                 </a>
+                                <a href="/block_user/<%=item._id%>">
+                                    Блок
+                                </a>                                
                             </div>
                         </div>
                     </div>
                 <%
                     })
                 %>                          
-                <h3>Комментарии</h3>
+                <br><br><br><br><br><br><h3>Комментарии</h3>
                 <%
                     rates.forEach(item =>{
                 %>
@@ -84,7 +87,7 @@
                 <%
                     })
                 %>                
-                <h3>Фильмы</h3>
+                <br><br><br><br><br><br><h3>Фильмы</h3>
                 <a href="/new" class="add-btn">Добавить фильм</a>
                 <%
                     films.forEach(item =>{
