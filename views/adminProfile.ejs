@@ -36,6 +36,54 @@
                     </div>
                 </div>
                 <!-- <div class="admin-btn"></div> -->
+                <h3>Пользователи</h3>
+                <%
+                    films.forEach(item =>{
+                %>
+                    <div class="main-card">
+                        <div class="card-left">
+                            <div class="film-info">
+                                <%=item.titleRus%>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="film-btns">
+                                <a href="/edit/<%=item._id%>">
+                                    Редактировать
+                                </a>
+                                <a onclick="deleteFilms('<%=item._id%>' , '<%=item.author._id%>')">
+                                    Удалить
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <%
+                    })
+                %>                          
+                <h3>Комментарии</h3>
+                <%
+                    rates.forEach(item =>{
+                %>
+                    <div class="main-card">
+                        <div class="card-left">
+                            <div class="film-info">
+                                <%=item.text%>
+                            </div>
+                        </div>
+                        <div class="card-right">
+                            <div class="film-btns">
+                                <a href="/edit_comment/<%=item._id%>">
+                                    Редактировать
+                                </a>
+                                <a onclick="deleteRates('<%=item._id%>' , '<%=item.authorId._id%>' )">
+                                    Удалить
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <%
+                    })
+                %>                
                 <h3>Фильмы</h3>
                 <a href="/new" class="add-btn">Добавить фильм</a>
                 <%

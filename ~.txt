@@ -110,3 +110,24 @@ git push origin main
 ---
 git add .
 git commit -m "add project 17(serial, series)"
+git push origin main
+---
+git add .
+git commit -m "add project 9 part 3-4, project 10 part 1-2 (comment view/edit/delete)"
+git push origin main
+
+project 9
+https://www.youtube.com/embed/iBRqBb4Miyg p1 (create, view)
+https://www.youtube.com/embed/NLH0O0H7bCU p2 (view)
+https://www.youtube.com/embed/lqRd2nMi_HE p3 (view admin, 4-30 edit)
+https://www.youtube.com/embed/NK7WrILUUZg p4 ...
+project 10
+https://www.youtube.com/embed/TjqeHw6vvXc p1 ...
+https://www.youtube.com/embed/BDjNw_h5EPo p2 delete
+add project 11 (I'll watch)"
+https://www.youtube.com/embed/fcXXeNIZ4JY p1 (saveToWatch) 
+https://www.youtube.com/embed/UM-iEiUMYkE p2 ...
+https://www.youtube.com/embed/MX8QdKCCpLs p3 ...
+add project 12 part 1
+https://www.youtube.com/embed/uHbjMugsT6M (deleteFromToWatch)
+add project 12 part 2 (detail)
